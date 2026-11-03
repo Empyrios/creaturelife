@@ -2,7 +2,7 @@
 
 An **original creature-raising life simulation** built as a standalone, dark-mode, mobile-first, local-first Progressive Web App. Created for the Empyrios app ecosystem, but usable without AppHub, API access, logins, subscriptions or paid services.
 
-**Status:** v1 game implemented and locally tested. GitHub Pages publication status depends on a successful deployment workflow; a repository commit alone is not proof of a live website.
+**Status:** CreatureLife v1.0 is committed to this independent repository. All 56 automated tests passed in GitHub Actions. GitHub Pages publication is blocked until the repository owner enables **Settings → Pages → Source: GitHub Actions**.
 
 ## Playable systems
 
@@ -46,9 +46,10 @@ The browser test requires Python Playwright and an installed Chromium binary at 
 
 ### Publishing to GitHub Pages
 
-1. Commit the source to the independent public `Empyrios/creaturelife` repository root.
-2. Open Settings → Pages → Build and deployment → Source, and select **GitHub Actions**.
-3. The included `.github/workflows/deploy.yml` verifies the game and deploys the `site/` directory. Confirm a completed successful deployment before linking to `https://empyrios.github.io/creaturelife/` from AppHub.
+1. **Completed:** Created the public [`Empyrios/creaturelife`](https://github.com/Empyrios/creaturelife) repository and committed the complete release.
+2. **Required owner setting:** Open [Settings → Pages](https://github.com/Empyrios/creaturelife/settings/pages), and select **GitHub Actions** under Build and deployment → Source.
+3. **After enabling:** Open [Actions](https://github.com/Empyrios/creaturelife/actions) and rerun the failed release workflow. All 56 tests already passed; the deploy job stopped at `actions/configure-pages@v5` because Pages was not yet enabled.
+4. **Verify:** Confirm a successful deployment and actual website load before linking `https://empyrios.github.io/creaturelife/` from AppHub.
 
 New repositories may require Pages enablement by the owner; an Actions `GITHUB_TOKEN` often cannot enable Pages automatically because it does not have administration rights.
 
