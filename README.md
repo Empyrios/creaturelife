@@ -2,7 +2,7 @@
 
 An **original creature-raising life simulation** built as a standalone, dark-mode, mobile-first, local-first Progressive Web App. Created for the Empyrios app ecosystem, but usable without AppHub, API access, logins, subscriptions or paid services.
 
-**Status:** CreatureLife v1.0 is committed to this independent repository. All 56 automated tests passed in GitHub Actions. GitHub Pages publication is blocked until the repository owner enables **Settings → Pages → Source: GitHub Actions**.
+**Status:** CreatureLife v1.0 is deployed to https://empyrios.github.io/creaturelife/. All 56 automated tests passed in GitHub Actions. Deployment confirmed in [workflow run 41639200655](https://github.com/Empyrios/creaturelife/actions/runs/41639200655), attempt 2.
 
 ## Playable systems
 
@@ -44,14 +44,13 @@ python3 tests/browser-check.py  # Optional Playwright smoke checks
 
 The browser test requires Python Playwright and an installed Chromium binary at `/usr/bin/chromium`. It uses in-memory ES-module loading because the original test container blocks navigation to local or remote URLs. It verifies mobile 390×844 and desktop 1440×900, all five views, actual care and expedition interactions, rename, habitat changes, export and lack of horizontal overflow. It is **not** a real deployment/network or service-worker offline test.
 
-### Publishing to GitHub Pages
+### GitHub Pages deployment
 
-1. **Completed:** Created the public [`Empyrios/creaturelife`](https://github.com/Empyrios/creaturelife) repository and committed the complete release.
-2. **Required owner setting:** Open [Settings → Pages](https://github.com/Empyrios/creaturelife/settings/pages), and select **GitHub Actions** under Build and deployment → Source.
-3. **After enabling:** Open [Actions](https://github.com/Empyrios/creaturelife/actions) and rerun the failed release workflow. All 56 tests already passed; the deploy job stopped at `actions/configure-pages@v5` because Pages was not yet enabled.
-4. **Verify:** Confirm a successful deployment and actual website load before linking `https://empyrios.github.io/creaturelife/` from AppHub.
-
-New repositories may require Pages enablement by the owner; an Actions `GITHUB_TOKEN` often cannot enable Pages automatically because it does not have administration rights.
+- **Status:** Published. GitHub Actions test and deploy jobs completed successfully on 3 November 2026.
+- **Play:** https://empyrios.github.io/creaturelife/
+- **Source:** https://github.com/Empyrios/creaturelife
+- **Deploy evidence:** https://github.com/Empyrios/creaturelife/actions/runs/41639200655 (second attempt)
+- To publish later updates, commit to `main`; the workflow runs `npm run verify` before publishing the `site/` directory. The repository must retain Settings → Pages → Source: GitHub Actions.
 
 ### Data and privacy
 
